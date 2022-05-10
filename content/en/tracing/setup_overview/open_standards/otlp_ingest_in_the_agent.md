@@ -154,61 +154,36 @@ experimental:
 
    For gRPC:
    ```
-   --set "datadog.env[0].name=DD_OTLP_CONFIG_RECEIVER_PROTOCOLS_GRPC_ENDPOINT,datadog.env[0].value=0.0.0.0:4317"
+   --set "datadog.otlp.receiver.protocols.grpc.endpoint=0.0.0.0:4317"
    ```
    For HTTP:
    ```
-   --set "datadog.env[0].name=DD_OTLP_CONFIG_RECEIVER_PROTOCOLS_HTTP_ENDPOINT,datadog.env[0].value=0.0.0.0:4318"
+   --set "datadog.otlp.receiver.protocols.http.endpoint=0.0.0.0:4318"
    ```
 
-   Or set them in the `datadog.env` parameter of the `values.yaml` file:
+   Or set them in the `datadog.otlp` section of the `values.yaml` file:
 
    For gRPC:
    ```
-   env
-     - name: DD_OTLP_CONFIG_RECEIVER_PROTOCOLS_GRPC_ENDPOINT
-       value: "0.0.0.0:4317"
+   datadog:
+     otlp:
+       receiver:
+         protocols:
+           grpc:
+             endpoint: "0.0.0.0:4317"
    ```
    
    For HTTP:
    ```
-   env: 
-     - name: DD_OTLP_CONFIG_RECEIVER_PROTOCOLS_HTTP_ENDPOINT
-       value: "0.0.0.0:4318"
+   datadog:
+     otlp:
+       receiver:
+         protocols:
+           http:
+             endpoint: "0.0.0.0:4318"
    ```
 
-3. Map the container ports (`4317` for gRPC or `4318` for HTTP) to the host port for the core Agent container. You can either use `set` commands:
-
-   For gRPC:
-   ```
-   --set 'agents.containers.agent.ports[0].containerPort=4317,agents.containers.agent.ports[0].hostPort=4317,agents.containers.agent.ports[0].name=traceportgrpc,agents.containers.agent.ports[0].protocol=TCP' 
-   ```
-   For HTTP:
-   ```
-   --set 'agents.containers.agent.ports[0].containerPort=4318,agents.containers.agent.ports[0].hostPort=4318,agents.containers.agent.ports[0].name=traceporthttp,agents.containers.agent.ports[0].protocol=TCP'
-   ```
-
-   Or set them in the `agents.containers.agent.ports` parameter of the `values.yaml` file:
-
-   For gRPC:
-   ```
-     ports: 
-       - containerPort: 4317
-         hostPort: 4317
-         name: traceportgrpc
-         protocol: TCP
-   ```
-
-   For HTTP:
-   ```
-     ports: 
-       - containerPort: 4318
-         hostPort: 4318
-         name: traceporthttp
-         protocol: TCP
-   ```
-
-4. In the application deployment file, configure the endpoint that the OpenTelemetry client sends traces to with the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable:
+3. In the application deployment file, configure the endpoint that the OpenTelemetry client sends traces to with the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable:
 
    For gPRC:
    ```

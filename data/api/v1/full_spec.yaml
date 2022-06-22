@@ -3791,7 +3791,13 @@ components:
       - apm_host_usage
       - browser_usage
       - container_usage
+      - cspm_containers_usage
+      - cspm_hosts_usage
       - custom_timeseries_usage
+      - cws_containers_usage
+      - cws_hosts_usage
+      - dbm_hosts_usage
+      - dbm_queries_usage
       - estimated_indexed_logs_usage
       - fargate_usage
       - functions_usage
@@ -3808,7 +3814,13 @@ components:
       - APM_HOST_USAGE
       - BROWSER_USAGE
       - CONTAINER_USAGE
+      - CSPM_CONTAINERS_USAGE
+      - CSPM_HOSTS_USAGE
       - CUSTOM_TIMESERIES_USAGE
+      - CWS_CONTAINERS_USAGE
+      - CWS_HOSTS_USAGE
+      - DBM_HOSTS_USAGE
+      - DBM_QUERIES_USAGE
       - ESTIMATED_INDEXED_LOGS_USAGE
       - FARGATE_USAGE
       - FUNCTIONS_USAGE
@@ -6977,10 +6989,24 @@ components:
       - browser_percentage
       - container_usage
       - container_percentage
+      - cspm_containers_percentage
+      - cspm_containers_usage
+      - cspm_hosts_percentage
+      - cspm_hosts_usage
       - custom_timeseries_usage
       - custom_timeseries_percentage
+      - cws_containers_percentage
+      - cws_containers_usage
+      - cws_hosts_percentage
+      - cws_hosts_usage
+      - dbm_hosts_percentage
+      - dbm_hosts_usage
+      - dbm_queries_percentage
+      - dbm_queries_usage
       - estimated_indexed_logs_usage
       - estimated_indexed_logs_percentage
+      - estimated_indexed_spans_percentage
+      - estimated_indexed_spans_usage
       - fargate_usage
       - fargate_percentage
       - functions_usage
@@ -7010,10 +7036,24 @@ components:
       - BROWSER_PERCENTAGE
       - CONTAINER_USAGE
       - CONTAINER_PERCENTAGE
+      - CSPM_CONTAINERS_PERCENTAGE
+      - CSPM_CONTAINERS_USAGE
+      - CSPM_HOSTS_PERCENTAGE
+      - CSPM_HOSTS_USAGE
       - CUSTOM_TIMESERIES_USAGE
       - CUSTOM_TIMESERIES_PERCENTAGE
+      - CWS_CONTAINERS_PERCENTAGE
+      - CWS_CONTAINERS_USAGE
+      - CWS_HOSTS_PERCENTAGE
+      - CWS_HOSTS_USAGE
+      - DBM_HOSTS_PERCENTAGE
+      - DBM_HOSTS_USAGE
+      - DBM_QUERIES_PERCENTAGE
+      - DBM_QUERIES_USAGE
       - ESTIMATED_INDEXED_LOGS_USAGE
       - ESTIMATED_INDEXED_LOGS_PERCENTAGE
+      - ESTIMATED_INDEXED_SPANS_PERCENTAGE
+      - ESTIMATED_INDEXED_SPANS_USAGE
       - FARGATE_USAGE
       - FARGATE_PERCENTAGE
       - FUNCTIONS_USAGE

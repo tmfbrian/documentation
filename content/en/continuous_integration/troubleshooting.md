@@ -101,6 +101,21 @@ This is done using the following algorithm:
 #### Possible issues with wall time calculation
 If you're using a library for testing time-dependent code, like [timecop][7] for Ruby or [FreezeGun][8] for Python, it is possible that test timestamps are wrong, and therefore calculated wall times. If this is the case, make sure that modifications to time are rolled back before finishing your tests.
 
+### The default branch is not correct
+#### How it impacts the product
+The default branch is used to power some features of the products, namely:
+
+- Default branches list: only default branches are displayed there, so a branch that is not result would result in a missing item from this table or the wrong branch being displayed.
+
+- Wall Time comparison for non-default branches: in the Branches list page, the **VS Default** column is calculated comparing wall time for the current branch against wall time for the default branch.
+
+- New flaky tests: Those are tests that were never flaky previously in the default branch, so, if the default branch is not properly set, this could lead to a wrong number of detected new flaky tests.
+
+#### How to fix the default branch
+You can easily update[^1] it on the [Repository Settings Page](https://app.datadoghq.com/ci/settings/repository).
+
+[^1]: *You need priveleged access to change it.*
+
 ### Need further help?
 
 Still need help? Contact [Datadog support][1].

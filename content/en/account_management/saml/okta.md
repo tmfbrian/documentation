@@ -50,7 +50,7 @@ This is required only if you are using [AuthN Mapping][3].
 
 | Name     | Name Format (optional) | Value                                                                                                                     |
 |----------|------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| memberOf | Unspecified            | Matches regex `.*` (This method retrieves all groups. Contact your IDP administrator if this does not fit your use case.) |
+| member_of | Unspecified            | Matches regex `.*` (This method retrieves all groups. Contact your IDP administrator if this does not fit your use case.) |
 
 
 Additional information on configuring SAML for your Datadog account is available on the [SAML documentation page][4].
